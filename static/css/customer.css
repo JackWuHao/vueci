@@ -1,0 +1,9 @@
+.navcostomer{
+	flex-direction: row;
+}
+.cusomtoer-margin{
+	margin-right: 0.625rem;
+}
+.customer-position{
+     position: absolute !important;
+}

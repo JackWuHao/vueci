@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/customer.css">
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <title> 首页</title>
+    </head>
+    <body>
+          <p class="text-center">
+             你好，请登录
+          </p>
+
+          <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+            <!-- Links -->
+            <ul class="navbar-nav navcostomer">
+                <li class="nav-item cusomtoer-margin">
+                    <a class="nav-link" href="#">Python</a>
+                </li>
+                <li class="nav-item cusomtoer-margin">
+                    <a class="nav-link" href="#">JavaScrip</a>
+                </li>
+    
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Java
+                    </a>
+                    <div class="dropdown-menu customer-position">
+                        <a class="dropdown-item" href="#">Java-1</a>
+                        <a class="dropdown-item" href="#">Java- 2</a>
+                        <a class="dropdown-item" href="#">Java-3</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    
+        <div class="container" style="width: 50%;">
+            <form action="/signin" method="POST">
+                <div class="row">
+                    <label for="demo">Write your email here:</label>
+                    <div class="input-group mb-3 ">
+                        <input type="text" class="form-control" placeholder="Email" name="name" value="1150238638@qq.com">
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="demo">Write your password here:</label>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="PassWord" name="password">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn bg-danger text-white" value="提交按钮">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
