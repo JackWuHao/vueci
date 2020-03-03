@@ -2,14 +2,21 @@
 
 const fs = require('fs')
 
-var fils = fs.readdirSync(__dirname+"/controllers")
-var js_files = fils.filter(function(file){
-    return file.endsWith('.js')
-})
 
-var controllers =  function(router){
+var getAllJsInPath = (path) =>{
+  var fils = fs.readdirSync(__dirname+ path)
+  var js_files = fils.filter(function(file){
+      return file.endsWith('.js')
+  })
+  return js_files
+}
+
+
+var controllers =  function(router,path){
+  
+   var js_files =  getAllJsInPath(path)
     for (let file of js_files ){
-        var mapping = require(__dirname + '/controllers/' + file)
+        var mapping = require(__dirname + path + file)
         for (let url in mapping){
             if (url.startsWith('GET ')){
               let path = url.substring(4)

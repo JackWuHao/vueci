@@ -2,16 +2,17 @@
     "name": "nodemvvm",
     "scripts": {
         "start": "node app.js",
-        "test":"node tableinit.js"
+        "test": "node tableinit.js"
     },
     "dependencies": {
         "koa": "^2.11.0",
         "koa-bodyparser": "^4.2.1",
         "koa-router": "7.0.0",
+        "koa2-cors": "^2.0.6",
         "mime": "^2.4.4",
-        "mz": "2.4.0",
         "mysql": "^2.18.1",
         "mysql2": "^2.1.0",
+        "mz": "2.4.0",
         "sequelize": "^5.21.4"
     }
 }

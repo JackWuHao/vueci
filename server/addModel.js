@@ -2,8 +2,6 @@
 
 const fs =require('fs')
 
-const db = require('./db')
-
 //找出model下面的所有文件
 let files = fs.readdirSync(__dirname+ '/model')
 

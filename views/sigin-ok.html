@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>登录成功</title>
-    </head>
-    <body>
-       <h1>   欢迎你来到我的首页  </h1>
-       <p>
-           asasasasasasasasasasasasasas<br/>
-           asasasasasasasasasasasasasas<br/>
-           asasasasasasasasasasasasasas<br/>
-           
-       </p>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/axios.min.js"></script>
+    <title>登录成功</title>
+</head>
+
+<body>
+    <h1> 欢迎你来到我的首页 </h1>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in list" :key="index">
+                欢迎用户名为{{item.name}}的用户
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                list: [],
+            },
+            created() {
+
+                this.initData()
+            },
+            methods: {
+                initData() {
+                    axios.get('/api/getUsers').then(response => {
+                       
+                        if (response.data.code === '200') {
+                              
+                            this.list = response.data.data
+
+                        }else{
+                            console.log('请求失败');
+                        }
+
+                    }).catch((error) => {
+                        console.log(error);
+
+                    })
+                }
+            }
+        })
+
+    </script>
+</body>
+
 </html>
